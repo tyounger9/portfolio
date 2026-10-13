@@ -347,10 +347,52 @@ h1 {
   letter-spacing: .13em;
 }
 
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 24px 108px;
+  text-align: center;
+}
+.contact-section .eyebrow { margin-bottom: 15px; }
+.contact-section h2 {
+  margin: 0;
+  color: var(--blue);
+  font: 700 clamp(36px, 5vw, 54px)/1.1 'Manrope', Arial, sans-serif;
+  letter-spacing: -.06em;
+}
+.contact-message {
+  max-width: 490px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 28px;
+  padding: 0 21px;
+  color: #fff;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+.linkedin-button:hover { color: var(--blue); background: #fff; }
+.linkedin-button:focus-visible { outline: 3px solid #80b8eb; outline-offset: 4px; }
+.linkedin-button span { font-size: 16px; }
+
 @media (max-width: 700px) {
-  .site-header { height: 68px; padding-inline: 24px; }
-  nav { gap: 14px; }
-  nav a { font-size: 12px; }
+  .site-header { height: 68px; padding-inline: clamp(16px, 5vw, 24px); }
+  nav { gap: 9px; }
+  nav a { font-size: 11px; }
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -385,6 +427,8 @@ h1 {
   .interests-intro { font-size: 13px; }
   .interests-columns { grid-template-columns: 1fr; gap: 28px; }
   .interests-index { bottom: 25px; left: 24px; }
+  .contact-section { padding: 76px 24px 82px; }
+  .contact-message { max-width: 380px; font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
