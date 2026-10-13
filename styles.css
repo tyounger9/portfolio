@@ -297,9 +297,60 @@ h1 {
   letter-spacing: .13em;
 }
 
+.interests-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, .85fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(48px, 9vw, 128px);
+  padding: 104px clamp(24px, 12vw, 176px) 118px;
+  background: #f0f5fa;
+}
+
+.interests-heading h2 {
+  margin: 0;
+  color: var(--blue);
+  font: 700 clamp(32px, 4vw, 48px)/1.12 'Manrope', Arial, sans-serif;
+  letter-spacing: -.055em;
+}
+
+.interests-intro {
+  max-width: 380px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.interests-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.interest-group h3 {
+  margin: 0 0 17px;
+  color: var(--blue);
+  font: 700 17px/1.3 'Manrope', Arial, sans-serif;
+}
+.interest-list, .skill-list { margin: 0; padding: 0; list-style: none; }
+.interest-list li, .skill-list li {
+  padding: 12px 0;
+  color: #536779;
+  border-bottom: 1px solid #d7e2ec;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.interest-list li:first-child, .skill-list li:first-child { border-top: 1px solid #d7e2ec; }
+.interests-index {
+  position: absolute;
+  bottom: 34px;
+  left: clamp(24px, 12vw, 176px);
+  color: #8795a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
 @media (max-width: 700px) {
   .site-header { height: 68px; padding-inline: 24px; }
-  nav { gap: 22px; }
+  nav { gap: 14px; }
+  nav a { font-size: 12px; }
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -329,6 +380,11 @@ h1 {
   .project-grid { grid-template-columns: 1fr; gap: 18px; }
   .project-copy { padding: 21px 20px 24px; }
   .projects-index { bottom: 25px; left: 24px; }
+  .interests-section { grid-template-columns: 1fr; gap: 30px; padding: 74px 24px 88px; }
+  .interests-heading h2 { font-size: clamp(32px, 9vw, 44px); }
+  .interests-intro { font-size: 13px; }
+  .interests-columns { grid-template-columns: 1fr; gap: 28px; }
+  .interests-index { bottom: 25px; left: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
