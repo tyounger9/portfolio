@@ -46,6 +46,9 @@ nav a {
   text-decoration: none;
 }
 
+nav { display: flex; align-items: center; gap: 32px; }
+nav a:not([aria-current="page"]) { color: #657386; }
+
 nav a:focus-visible, .wordmark:focus-visible, .text-link:focus-visible {
   outline: 3px solid #80b8eb;
   outline-offset: 5px;
@@ -174,8 +177,55 @@ h1 {
   border-top: 1px solid #e8edf3;
 }
 
+.about-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+  align-items: center;
+  gap: clamp(48px, 10vw, 144px);
+  padding: 112px clamp(24px, 12vw, 176px) 124px;
+  background: #f0f5fa;
+}
+
+.about-heading h2 {
+  margin: 0;
+  max-width: 590px;
+  color: var(--blue);
+  font: 700 clamp(32px, 4vw, 52px)/1.15 'Manrope', Arial, sans-serif;
+  letter-spacing: -.055em;
+}
+
+.about-content p {
+  margin: 0 0 18px;
+  color: #586a7c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
+.about-tags span {
+  padding: 9px 12px;
+  color: var(--blue);
+  background: #fff;
+  border: 1px solid #dce6ef;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.about-index {
+  position: absolute;
+  bottom: 35px;
+  left: clamp(24px, 12vw, 176px);
+  color: #8795a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
 @media (max-width: 700px) {
   .site-header { height: 68px; padding-inline: 24px; }
+  nav { gap: 22px; }
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -189,6 +239,15 @@ h1 {
   .portrait { width: min(74%, 300px); max-height: none; justify-self: center; }
   .hero-index { bottom: 28px; left: 24px; }
   .site-footer { min-height: 56px; padding-inline: 24px; }
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 74px 24px 88px;
+  }
+  .about-heading h2 { font-size: clamp(32px, 9vw, 44px); }
+  .wide-break { display: none; }
+  .about-content p { font-size: 14px; }
+  .about-index { bottom: 26px; left: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
