@@ -223,6 +223,80 @@ h1 {
   letter-spacing: .13em;
 }
 
+.projects-section {
+  position: relative;
+  padding: 108px clamp(24px, 12vw, 176px) 118px;
+}
+
+.projects-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 42px;
+}
+
+.projects-heading h2 {
+  margin: 0;
+  color: var(--blue);
+  font: 700 clamp(32px, 4vw, 48px)/1.12 'Manrope', Arial, sans-serif;
+  letter-spacing: -.055em;
+}
+
+.projects-intro {
+  max-width: 300px;
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.project-card { min-width: 0; background: #fff; border: 1px solid #e1e8ef; }
+.project-image {
+  aspect-ratio: 1.75 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: #58738e;
+  background-color: #e8f0f7;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.lacrosse-placeholder {
+  background-image: linear-gradient(135deg, transparent 49.8%, #c9d9e8 50%, transparent 50.2%), linear-gradient(45deg, transparent 49.8%, #d1dfeb 50%, transparent 50.2%);
+  background-size: 100% 100%;
+}
+.creative-placeholder { background: linear-gradient(140deg, #edf3f8 0 42%, #dce8f2 42% 65%, #e8f0f7 65%); }
+.image-symbol { color: #537da5; font-size: 26px; font-weight: 400; }
+.project-copy { padding: 24px 26px 28px; }
+.project-type {
+  margin: 0 0 11px;
+  color: #6685a3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.project-copy h3 {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font: 700 19px/1.35 'Manrope', Arial, sans-serif;
+  letter-spacing: -.03em;
+}
+.project-copy > p:last-child { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+.projects-index {
+  position: absolute;
+  bottom: 34px;
+  left: clamp(24px, 12vw, 176px);
+  color: #8795a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
 @media (max-width: 700px) {
   .site-header { height: 68px; padding-inline: 24px; }
   nav { gap: 22px; }
@@ -248,6 +322,13 @@ h1 {
   .wide-break { display: none; }
   .about-content p { font-size: 14px; }
   .about-index { bottom: 26px; left: 24px; }
+  .projects-section { padding: 74px 24px 84px; }
+  .projects-heading { display: block; margin-bottom: 29px; }
+  .projects-heading h2 { font-size: clamp(32px, 9vw, 44px); }
+  .projects-intro { margin-top: 14px; font-size: 13px; }
+  .project-grid { grid-template-columns: 1fr; gap: 18px; }
+  .project-copy { padding: 21px 20px 24px; }
+  .projects-index { bottom: 25px; left: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
