@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --blue: #123b68;
+  --blue-light: #e8f0f8;
+  --ink: #172333;
+  --muted: #657386;
+  --paper: #fbfcfe;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  height: 82px;
+  padding: 0 clamp(24px, 7.5vw, 112px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.wordmark {
+  color: var(--blue);
+  font: 800 22px/1 'Manrope', Arial, sans-serif;
+  letter-spacing: -.08em;
+  text-decoration: none;
+}
+
+.wordmark span { color: #5b91c7; }
+
+nav a {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:focus-visible, .wordmark:focus-visible, .text-link:focus-visible {
+  outline: 3px solid #80b8eb;
+  outline-offset: 5px;
+}
+
+.hero {
+  min-height: min(690px, calc(100svh - 136px));
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 390px);
+  align-items: center;
+  gap: clamp(48px, 9vw, 140px);
+  padding: 72px clamp(24px, 12vw, 176px) 100px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 52vw;
+  height: 52vw;
+  max-width: 700px;
+  max-height: 700px;
+  right: -14vw;
+  top: 7%;
+  border-radius: 50%;
+  background: #f0f5fa;
+}
+
+.hero-copy { max-width: 540px; }
+
+.eyebrow {
+  margin: 0 0 23px;
+  color: #52799f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--blue);
+  font: 800 clamp(54px, 7.4vw, 92px)/.99 'Manrope', Arial, sans-serif;
+  letter-spacing: -.075em;
+}
+
+.role {
+  margin: 27px 0 12px;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
+}
+
+.intro {
+  max-width: 415px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid #9db6ce;
+  padding-bottom: 7px;
+}
+
+.text-link span { font-size: 17px; }
+
+.portrait {
+  aspect-ratio: 4 / 5;
+  max-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  color: var(--blue);
+  background: linear-gradient(145deg, #dce8f3, #eef3f8 60%, #d2e1ee);
+  border: 1px solid #d5e1ec;
+  box-shadow: 18px 18px 0 #e9eff5;
+}
+
+.portrait::before, .portrait::after {
+  content: '';
+  position: absolute;
+  width: 180%;
+  height: 1px;
+  background: #c5d6e6;
+  transform: rotate(-49deg);
+}
+
+.portrait::after { transform: rotate(49deg); }
+.portrait-mark, .portrait-caption { position: relative; z-index: 1; }
+.portrait-mark { font: 800 44px/1 'Manrope', Arial, sans-serif; letter-spacing: -.08em; opacity: .72; }
+.portrait-caption { text-align: center; color: #536c83; font-size: 12px; line-height: 1.5; }
+
+.hero-index {
+  position: absolute;
+  bottom: 36px;
+  left: clamp(24px, 12vw, 176px);
+  color: #8795a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.site-footer {
+  min-height: 54px;
+  padding: 0 clamp(24px, 7.5vw, 112px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8491a0;
+  font-size: 11px;
+  border-top: 1px solid #e8edf3;
+}
+
+@media (max-width: 700px) {
+  .site-header { height: 68px; padding-inline: 24px; }
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 39px;
+    padding: 62px 24px 82px;
+  }
+  .hero::before { width: 100vw; height: 100vw; right: -52vw; top: 30%; }
+  h1 { font-size: clamp(56px, 16vw, 78px); }
+  .desktop-break { display: none; }
+  .intro { font-size: 15px; }
+  .portrait { width: min(74%, 300px); max-height: none; justify-self: center; }
+  .hero-index { bottom: 28px; left: 24px; }
+  .site-footer { min-height: 56px; padding-inline: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
